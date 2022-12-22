@@ -11,6 +11,11 @@
 		DF3B253E2951B6DC009C4E04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B253D2951B6DC009C4E04 /* ContentView.swift */; };
 		DF3B25402951B6DD009C4E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF3B253F2951B6DD009C4E04 /* Assets.xcassets */; };
 		DF3B25432951B6DD009C4E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF3B25422951B6DD009C4E04 /* Preview Assets.xcassets */; };
+		DF3B254C29545403009C4E04 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B254B29545403009C4E04 /* Person.swift */; };
+		DF3B254E29545438009C4E04 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B254D29545438009C4E04 /* PersonModel.swift */; };
+		DF4B8580295466F9003C48EE /* PersonCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B857F295466F9003C48EE /* PersonCollection.swift */; };
+		DF4B858329547098003C48EE /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B858229547098003C48EE /* Form.swift */; };
+		DF4B8587295470E6003C48EE /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B8586295470E6003C48EE /* FormModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		DF3B253D2951B6DC009C4E04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF3B253F2951B6DD009C4E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF3B25422951B6DD009C4E04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DF3B254B29545403009C4E04 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DF3B254D29545438009C4E04 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		DF4B857F295466F9003C48EE /* PersonCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollection.swift; sourceTree = "<group>"; };
+		DF4B858229547098003C48EE /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		DF4B8586295470E6003C48EE /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,8 @@
 		DF3B253A2951B6DC009C4E04 /* WhoAreU */ = {
 			isa = PBXGroup;
 			children = (
+				DF3B254A29545087009C4E04 /* Model */,
+				DF3B254929545076009C4E04 /* Screens */,
 				DF3B253B2951B6DC009C4E04 /* WhoAreUApp.swift */,
 				DF3B253D2951B6DC009C4E04 /* ContentView.swift */,
 				DF3B253F2951B6DD009C4E04 /* Assets.xcassets */,
@@ -65,6 +77,25 @@
 				DF3B25422951B6DD009C4E04 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DF3B254929545076009C4E04 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DF3B254B29545403009C4E04 /* Person.swift */,
+				DF4B857F295466F9003C48EE /* PersonCollection.swift */,
+				DF4B858229547098003C48EE /* Form.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DF3B254A29545087009C4E04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF3B254D29545438009C4E04 /* PersonModel.swift */,
+				DF4B8586295470E6003C48EE /* FormModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4B8587295470E6003C48EE /* FormModel.swift in Sources */,
+				DF3B254E29545438009C4E04 /* PersonModel.swift in Sources */,
+				DF3B254C29545403009C4E04 /* Person.swift in Sources */,
+				DF4B8580295466F9003C48EE /* PersonCollection.swift in Sources */,
 				DF3B253E2951B6DC009C4E04 /* ContentView.swift in Sources */,
 				DF3B253C2951B6DC009C4E04 /* WhoAreUApp.swift in Sources */,
+				DF4B858329547098003C48EE /* Form.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

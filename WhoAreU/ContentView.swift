@@ -8,15 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selectedPerson: PersonModel = PersonModel(id: 1, title: "Child", image: "Child")
+    
+    var person: [PersonModel] = PersonModel.allPerson()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                Color(red: 0.16, green: 0.50, blue: 0.73)
+                    .edgesIgnoringSafeArea(.all)
+                VStack() {
+                    Text("WHO YOU ARE?")
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.white)
+                        
+                    PersonCollection(selectedPerson: $selectedPerson, persons: person)
+                        
+                }
+            }
+            .navigationTitle("Sign Up")
+            .toolbarBackground(Color.white, for: .navigationBar)
         }
-        .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
