@@ -22,14 +22,16 @@ struct Person: View {
                     .clipShape(Circle())
                     .overlay(Circle().stroke(Color.white, lineWidth: 3))
                     .shadow(radius: 3)
+                    .opacity(1.0)
             } else {
                 Image(person.image!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 70, height: 70)
                     .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.pink, lineWidth: 3))
+                    .overlay(Circle().stroke(Color.gray, lineWidth: 3))
                     .shadow(radius: 3)
+                    .opacity(0.5)
             }
             
             Text(person.title!)

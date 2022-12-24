@@ -14,7 +14,7 @@
 		DF3B254C29545403009C4E04 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B254B29545403009C4E04 /* Person.swift */; };
 		DF3B254E29545438009C4E04 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B254D29545438009C4E04 /* PersonModel.swift */; };
 		DF4B8580295466F9003C48EE /* PersonCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B857F295466F9003C48EE /* PersonCollection.swift */; };
-		DF4B858329547098003C48EE /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B858229547098003C48EE /* Form.swift */; };
+		DF4B858329547098003C48EE /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B858229547098003C48EE /* FormView.swift */; };
 		DF4B8587295470E6003C48EE /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B8586295470E6003C48EE /* FormModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,7 @@
 		DF3B254B29545403009C4E04 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DF3B254D29545438009C4E04 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		DF4B857F295466F9003C48EE /* PersonCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollection.swift; sourceTree = "<group>"; };
-		DF4B858229547098003C48EE /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		DF4B858229547098003C48EE /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		DF4B8586295470E6003C48EE /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +84,7 @@
 			children = (
 				DF3B254B29545403009C4E04 /* Person.swift */,
 				DF4B857F295466F9003C48EE /* PersonCollection.swift */,
-				DF4B858229547098003C48EE /* Form.swift */,
+				DF4B858229547098003C48EE /* FormView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 				DF4B8580295466F9003C48EE /* PersonCollection.swift in Sources */,
 				DF3B253E2951B6DC009C4E04 /* ContentView.swift in Sources */,
 				DF3B253C2951B6DC009C4E04 /* WhoAreUApp.swift in Sources */,
-				DF4B858329547098003C48EE /* Form.swift in Sources */,
+				DF4B858329547098003C48EE /* FormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
