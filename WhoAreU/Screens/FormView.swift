@@ -34,6 +34,9 @@ struct ThemeTxeField: TextFieldStyle {
 
 struct FormView: View {
     
+    @ObservedObject var emailValidation = EmailValidationObj()
+    @ObservedObject var passwordValidation = PasswordValidationObj()
+    
     @State private var formData = FormModel()
     
     var body: some View {
@@ -47,9 +50,12 @@ struct FormView: View {
                 TextField("Last Name", text: $formData.lastName)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "person.fill")))
                 
-                TextField("E-mail", text: $formData.email)
+                TextField("E-mail", text: $emailValidation.email)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "envelope.fill")))
                     .keyboardType(.emailAddress)
+                Text(emailValidation.error)
+                    .font(.footnote)
+                    .foregroundColor(.white)
             }
             .listRowBackground(Color.clear) // to clear the background of the section list
             Text("Account Details")
@@ -57,13 +63,22 @@ struct FormView: View {
             Section {
                 TextField("User Name", text: $formData.userName)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "person.circle.fill")))
-                TextField("Password", text: $formData.password)
+                SecureField("Password", text: $passwordValidation.password)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
-                TextField("Confirm Password", text: $formData.confPassword)
+                Text(passwordValidation.error)
+                    .font(.footnote)
+                    .foregroundColor(.white)
+                SecureField("Confirm Password", text: $formData.confPassword)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
             }
             .listRowBackground(Color.clear)
             
+            Section {
+                SubmitBtn()
+                    .frame(height: 95)
+                
+            }
+            .listRowBackground(Color.clear)
         }
         .scrollContentBackground(.hidden) //to clear the background of the form
     }
@@ -72,5 +87,55 @@ struct FormView: View {
 struct Form_Previews: PreviewProvider {
     static var previews: some View {
         FormView()
+    }
+}
+
+
+class EmailValidationObj: ObservableObject {
+    @Published var email = "" {
+        didSet {
+            if email.isEmpty {
+                error = "Required"
+            } else if !email.isValidEmail(email){
+                error = "Invalid email"
+            } else {
+                error = ""
+            }
+        }
+    }
+    
+    @Published var error = ""
+}
+
+class PasswordValidationObj: ObservableObject {
+    @Published var password = "" {
+        didSet {
+            self.isValidPassword()
+        }
+    }
+    
+    @Published var error = ""
+    
+    private func isValidPassword() {
+        guard !password.isEmpty else { return error = "Required" }
+        
+        let setPassError = password.isPassword() == false
+        
+        if setPassError {
+            if password.count < 6 {
+                self.error = "Password must be at least 6 characters"
+            }
+        }
+        if !password.isUpperCase() {
+            self.error = "Password must cointain at least one upper case character"
+        } else if !password.isLowerCase() {
+            self.error = "Password must cointain at least one lower case character"
+        } else if !password.containsDigit() {
+            self.error = "Password must cointain at least one number"
+        } else if !password.containsCharacter() {
+            self.error = "Password must cointain at least one special character"
+        } else {
+            error = ""
+        }
     }
 }

@@ -16,6 +16,9 @@
 		DF4B8580295466F9003C48EE /* PersonCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B857F295466F9003C48EE /* PersonCollection.swift */; };
 		DF4B858329547098003C48EE /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B858229547098003C48EE /* FormView.swift */; };
 		DF4B8587295470E6003C48EE /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4B8586295470E6003C48EE /* FormModel.swift */; };
+		DF63449C295A831C00687B29 /* SubmitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF63449B295A831C00687B29 /* SubmitBtn.swift */; };
+		DF63449E295A896B00687B29 /* RotatingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF63449D295A896B00687B29 /* RotatingCircle.swift */; };
+		DF6344A1295AB21700687B29 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6344A0295AB21700687B29 /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		DF4B857F295466F9003C48EE /* PersonCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollection.swift; sourceTree = "<group>"; };
 		DF4B858229547098003C48EE /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		DF4B8586295470E6003C48EE /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
+		DF63449B295A831C00687B29 /* SubmitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBtn.swift; sourceTree = "<group>"; };
+		DF63449D295A896B00687B29 /* RotatingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingCircle.swift; sourceTree = "<group>"; };
+		DF6344A0295AB21700687B29 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		DF3B253A2951B6DC009C4E04 /* WhoAreU */ = {
 			isa = PBXGroup;
 			children = (
+				DF63449F295AB1F700687B29 /* SupFiles */,
 				DF3B254A29545087009C4E04 /* Model */,
 				DF3B254929545076009C4E04 /* Screens */,
 				DF3B253B2951B6DC009C4E04 /* WhoAreUApp.swift */,
@@ -85,6 +92,8 @@
 				DF3B254B29545403009C4E04 /* Person.swift */,
 				DF4B857F295466F9003C48EE /* PersonCollection.swift */,
 				DF4B858229547098003C48EE /* FormView.swift */,
+				DF63449B295A831C00687B29 /* SubmitBtn.swift */,
+				DF63449D295A896B00687B29 /* RotatingCircle.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -96,6 +105,14 @@
 				DF4B8586295470E6003C48EE /* FormModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DF63449F295AB1F700687B29 /* SupFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DF6344A0295AB21700687B29 /* Extentions.swift */,
+			);
+			path = SupFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF4B8587295470E6003C48EE /* FormModel.swift in Sources */,
+				DF63449E295A896B00687B29 /* RotatingCircle.swift in Sources */,
+				DF6344A1295AB21700687B29 /* Extentions.swift in Sources */,
 				DF3B254E29545438009C4E04 /* PersonModel.swift in Sources */,
+				DF63449C295A831C00687B29 /* SubmitBtn.swift in Sources */,
 				DF3B254C29545403009C4E04 /* Person.swift in Sources */,
 				DF4B8580295466F9003C48EE /* PersonCollection.swift in Sources */,
 				DF3B253E2951B6DC009C4E04 /* ContentView.swift in Sources */,

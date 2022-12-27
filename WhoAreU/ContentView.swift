@@ -41,6 +41,7 @@ struct ContentView: View {
                     
                     PersonCollection(selectedPerson: $selectedPerson, persons: person)
                     FormView()
+                    
                 }
                 
             }
