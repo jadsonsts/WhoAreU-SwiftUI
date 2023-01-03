@@ -7,37 +7,16 @@
 
 import SwiftUI
 
-struct ThemeTxeField: TextFieldStyle {
-    
-    @State var icon: Image?
-    
-    public func _body(configuration: TextField<Self._Label>) -> some View {
-        HStack {
-            if icon != nil {
-                icon
-                    .foregroundColor(.white) //change to white
-            }
-            configuration
-        }
-        .padding(.vertical)
-        .padding(.horizontal, 24)
-        .foregroundColor(.white)
-        .fontWeight(.semibold)
-        .overlay {
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(Color.white, lineWidth: 2) //change to white
-        }
-        .background(Color.clear)
-        .scrollDismissesKeyboard(.immediately)
-    }
-}
-
 struct FormView: View {
-    
-    @ObservedObject var emailValidation = EmailValidationObj()
-    @ObservedObject var passwordValidation = PasswordValidationObj()
+
+    @ObservedObject private var emailValidation = EmailValidationObj()
+    @ObservedObject private var passwordValidation = PasswordValidationObj()
     
     @State private var formData = FormModel()
+    
+    var isFormComplete: Bool {
+        return formData.firstName.isEmpty || formData.lastName.isEmpty || formData.userName.isEmpty || emailValidation.email.isEmpty || passwordValidation.password.isEmpty || formData.confPassword.isEmpty
+    }
     
     var body: some View {
         Form {
@@ -53,9 +32,12 @@ struct FormView: View {
                 TextField("E-mail", text: $emailValidation.email)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "envelope.fill")))
                     .keyboardType(.emailAddress)
-                Text(emailValidation.error)
-                    .font(.footnote)
-                    .foregroundColor(.white)
+                if emailValidation.error != "" {
+                    Text(emailValidation.error)
+                        .font(.footnote)
+                        .foregroundColor(.red)
+                }
+                
             }
             .listRowBackground(Color.clear) // to clear the background of the section list
             Text("Account Details")
@@ -64,23 +46,55 @@ struct FormView: View {
                 TextField("User Name", text: $formData.userName)
                     .textFieldStyle(ThemeTxeField(icon: Image(systemName: "person.circle.fill")))
                 SecureField("Password", text: $passwordValidation.password)
-                    .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
-                Text(passwordValidation.error)
-                    .font(.footnote)
-                    .foregroundColor(.white)
-                SecureField("Confirm Password", text: $formData.confPassword)
-                    .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
-            }
+                        .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
+                if passwordValidation.password.count >= 1 {
+                    List(passwordValidation.validations) { validation in
+                        HStack {
+                            Image(systemName: validation.state == .success ? "checkmark.circle.fill" : "checkmark.circle")
+                                .foregroundColor(validation.state == .success ? Color.green : Color.gray.opacity(0.3))
+                            Text(validation.validationType.message(fieldName: validation.field.rawValue))
+                                .strikethrough(validation.state == .success)
+                                .font(Font.caption)
+                                .foregroundColor(validation.state == .success ? Color.gray : .black)
+                        }
+                        .padding([.leading], 15)
+                        }
+                }
+
+                if passwordValidation.password.count < 6 {
+                    SecureField("Confirm Password", text: $formData.confPassword)
+                        .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
+                        .disabled(true)
+                } else {
+                    SecureField("Confirm Password", text: $formData.confPassword)
+                        .textFieldStyle(ThemeTxeField(icon: Image(systemName: "lock")))
+                }
+                
+                if formData.confPassword != passwordValidation.password {
+                    Text("Both fields must be the same")
+                        .font(.footnote)
+                        .foregroundColor(.white)
+                }
+
+                    
+                }
             .listRowBackground(Color.clear)
             
             Section {
                 SubmitBtn()
                     .frame(height: 95)
+                    .disabled(isFormComplete)
+                    .onTapGesture {
+                        clearFields()
+                    }
                 
             }
             .listRowBackground(Color.clear)
         }
         .scrollContentBackground(.hidden) //to clear the background of the form
+    }
+    public func clearFields() {
+        formData.lastName = ""
     }
 }
 
@@ -107,35 +121,4 @@ class EmailValidationObj: ObservableObject {
     @Published var error = ""
 }
 
-class PasswordValidationObj: ObservableObject {
-    @Published var password = "" {
-        didSet {
-            self.isValidPassword()
-        }
-    }
-    
-    @Published var error = ""
-    
-    private func isValidPassword() {
-        guard !password.isEmpty else { return error = "Required" }
-        
-        let setPassError = password.isPassword() == false
-        
-        if setPassError {
-            if password.count < 6 {
-                self.error = "Password must be at least 6 characters"
-            }
-        }
-        if !password.isUpperCase() {
-            self.error = "Password must cointain at least one upper case character"
-        } else if !password.isLowerCase() {
-            self.error = "Password must cointain at least one lower case character"
-        } else if !password.containsDigit() {
-            self.error = "Password must cointain at least one number"
-        } else if !password.containsCharacter() {
-            self.error = "Password must cointain at least one special character"
-        } else {
-            error = ""
-        }
-    }
-}
+

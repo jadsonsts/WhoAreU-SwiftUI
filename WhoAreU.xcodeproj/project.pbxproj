@@ -19,6 +19,7 @@
 		DF63449C295A831C00687B29 /* SubmitBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF63449B295A831C00687B29 /* SubmitBtn.swift */; };
 		DF63449E295A896B00687B29 /* RotatingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF63449D295A896B00687B29 /* RotatingCircle.swift */; };
 		DF6344A1295AB21700687B29 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6344A0295AB21700687B29 /* Extentions.swift */; };
+		DF6344A529629AF400687B29 /* PasswordValidationObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6344A429629AF400687B29 /* PasswordValidationObj.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DF63449B295A831C00687B29 /* SubmitBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBtn.swift; sourceTree = "<group>"; };
 		DF63449D295A896B00687B29 /* RotatingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingCircle.swift; sourceTree = "<group>"; };
 		DF6344A0295AB21700687B29 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		DF6344A429629AF400687B29 /* PasswordValidationObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidationObj.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				DF6344A0295AB21700687B29 /* Extentions.swift */,
+				DF6344A429629AF400687B29 /* PasswordValidationObj.swift */,
 			);
 			path = SupFiles;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				DF4B8587295470E6003C48EE /* FormModel.swift in Sources */,
 				DF63449E295A896B00687B29 /* RotatingCircle.swift in Sources */,
+				DF6344A529629AF400687B29 /* PasswordValidationObj.swift in Sources */,
 				DF6344A1295AB21700687B29 /* Extentions.swift in Sources */,
 				DF3B254E29545438009C4E04 /* PersonModel.swift in Sources */,
 				DF63449C295A831C00687B29 /* SubmitBtn.swift in Sources */,
@@ -331,6 +335,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,6 +365,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

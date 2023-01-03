@@ -19,13 +19,13 @@ struct ContentView: View {
                 
                 switch selectedPerson.id {
                 case 0: //parent
-                    Color(red: 0.65, green: 0.20, blue: 0.20)
+                    Color(red: 0.75, green: 0.40, blue: 0.30)
                         .edgesIgnoringSafeArea(.all)
                 case 1: //child
                     Color(red: 0.6, green: 0.87, blue: 0.80)
                         .edgesIgnoringSafeArea(.all)
                 case 2: //teacher
-                    Color(red: 0.90, green: 0.45, blue: 0.20)
+                    Color(red: 0.80, green: 0.70, blue: 0.40)
                         .edgesIgnoringSafeArea(.all)
                 default:
                     Color(red: 0.16, green: 0.50, blue: 0.73)
@@ -33,25 +33,34 @@ struct ContentView: View {
                     
                 }
                 
-
+                
                 VStack{
                     Text("WHO YOU ARE?")
                         .fontWeight(.semibold)
                         .foregroundColor(Color.white)
                     
-                    PersonCollection(selectedPerson: $selectedPerson, persons: person)
-                    FormView()
+                    PersonCollection(selectedPerson: $selectedPerson, persons:person)
+                    if selectedPerson.id == 0 || selectedPerson.id == 1 || selectedPerson.id == 2 {
+                        FormView()
+                    } else {
+                        Text("Please select one")
+                            .foregroundColor(.white)
+                            .italic()
+                            .fontWeight(.semibold)
+                        FormView()
+                            .disabled(true)
+                    }
+                    
                     
                 }
+                .navigationTitle("Sign Up")
+                .toolbarBackground(Color.white, for: .navigationBar)
                 
             }
-            .navigationTitle("Sign Up")
-            .toolbarBackground(Color.white, for: .navigationBar)
-            
         }
     }
-    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

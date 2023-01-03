@@ -10,8 +10,6 @@ import Foundation
 struct FormModel {
     var firstName = ""
     var lastName = ""
-    var email = ""
     var userName = ""
-    var password = ""
     var confPassword = ""
 }
